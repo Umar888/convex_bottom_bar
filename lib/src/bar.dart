@@ -138,6 +138,10 @@ class ConvexAppBar extends StatefulWidget {
   /// Size of the curve line.
   final double? curveSize;
 
+  
+  /// Always Use Acive Color In Center Icon.
+  final bool? alwaysUseAciveColorInCenterIcon;
+
   /// The distance that the [actionButton] top edge is inset from the top of the AppBar.
   final double? top;
 
@@ -204,6 +208,7 @@ class ConvexAppBar extends StatefulWidget {
     double? height,
     double? curveSize,
     double? top,
+    bool? alwaysUseAciveColorInCenterIcon,
     double? elevation,
     double? cornerRadius,
     TabStyle? style,
@@ -222,6 +227,7 @@ class ConvexAppBar extends StatefulWidget {
           onTap: onTap,
           onTapNotify: onTabNotify,
           controller: controller,
+    alwaysUseAciveColorInCenterIcon:alwaysUseAciveColorInCenterIcon,
           backgroundColor: backgroundColor,
           shadowColor: shadowColor,
           count: items.length,
