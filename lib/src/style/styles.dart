@@ -34,6 +34,7 @@ DelegateBuilder supportedStyle(
   required Color color,
   required Color activeColor,
   required Color backgroundColor,
+  required bool alwaysUseActiveColorInCenterIcon,
   required Curve curve,
 }) {
   assert(items.isNotEmpty, 'items should not be empty');
@@ -56,6 +57,7 @@ DelegateBuilder supportedStyle(
       builder = FixedCircleTabStyle(
         items: items,
         color: color,
+        alwaysUseActiveColorInCenterIcon: alwaysUseActiveColorInCenterIcon,
         activeColor: activeColor,
         backgroundColor: backgroundColor,
         convexIndex: items.length ~/ 2,

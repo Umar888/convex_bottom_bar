@@ -219,6 +219,7 @@ class ConvexAppBar extends StatefulWidget {
           itemBuilder: supportedStyle(
             style ?? TabStyle.reactCircle,
             items: items,
+            alwaysUseActiveColorInCenterIcon: alwaysUseActiveColorInCenterIcon == true,
             color: color ?? Colors.white60,
             activeColor: activeColor ?? Colors.white,
             backgroundColor: backgroundColor ?? Colors.blue,

@@ -27,7 +27,7 @@ class FixedCircleTabStyle extends InnerBuilder {
 
   /// Index of the centered convex shape.
   final int convexIndex;
-  
+
   final bool alwaysUseActiveColorInCenterIcon;
 
   /// Create style builder
@@ -42,7 +42,7 @@ class FixedCircleTabStyle extends InnerBuilder {
 
   @override
   Widget build(BuildContext context, int index, bool active) {
-    var c = active ? activeColor : color;
+    var c = (index == convexIndex && alwaysUseActiveColorInCenterIcon)?activeColor:(active ? activeColor : color);
     var item = items[index];
     var style = ofStyle(context);
     var textStyle = style.textStyle(c, item.fontFamily);
