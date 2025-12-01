@@ -62,7 +62,7 @@ class FixedCircleTabStyle extends InnerBuilder {
         ),
         margin: EdgeInsets.all(margin),
         child: BlendImageIcon(
-          alwaysUseActiveColorInCenterIcon?item.activeIcon:(active ? item.activeIcon ?? item.icon : item.icon),
+          active ? item.activeIcon ?? item.icon : item.icon,
           size: style.activeIconSize,
           color: item.blend ? backgroundColor : null,
         ),
