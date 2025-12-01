@@ -139,8 +139,8 @@ class ConvexAppBar extends StatefulWidget {
   final double? curveSize;
 
   
-  /// Always Use Acive Color In Center Icon.
-  final bool? alwaysUseActiveColorInCenterIcon;
+  /// Always Use Active Color In Center Icon.
+  final bool alwaysUseActiveColorInCenterIcon;
 
   /// The distance that the [actionButton] top edge is inset from the top of the AppBar.
   final double? top;
@@ -208,7 +208,7 @@ class ConvexAppBar extends StatefulWidget {
     double? height,
     double? curveSize,
     double? top,
-    bool? alwaysUseActiveColorInCenterIcon,
+    required bool alwaysUseActiveColorInCenterIcon,
     double? elevation,
     double? cornerRadius,
     TabStyle? style,
@@ -219,7 +219,7 @@ class ConvexAppBar extends StatefulWidget {
           itemBuilder: supportedStyle(
             style ?? TabStyle.reactCircle,
             items: items,
-            alwaysUseActiveColorInCenterIcon: alwaysUseActiveColorInCenterIcon == true,
+            alwaysUseActiveColorInCenterIcon: alwaysUseActiveColorInCenterIcon,
             color: color ?? Colors.white60,
             activeColor: activeColor ?? Colors.white,
             backgroundColor: backgroundColor ?? Colors.blue,
@@ -270,7 +270,7 @@ class ConvexAppBar extends StatefulWidget {
     this.controller,
     this.backgroundColor,
     this.shadowColor,
-    this.alwaysUseActiveColorInCenterIcon,
+    required this.alwaysUseActiveColorInCenterIcon,
     this.gradient,
     this.height,
     this.curveSize,
@@ -316,6 +316,7 @@ class ConvexAppBar extends StatefulWidget {
     required List<TabItem> items,
     int? initialActiveIndex,
     bool? disableDefaultTabController,
+    required bool alwaysUseActiveColorInCenterIcon,
     GestureTapIndexCallback? onTap,
     TapNotifier? onTabNotify,
     TabController? controller,
@@ -352,6 +353,7 @@ class ConvexAppBar extends StatefulWidget {
       onTabNotify: onTabNotify,
       controller: controller,
       color: color,
+      alwaysUseActiveColorInCenterIcon: alwaysUseActiveColorInCenterIcon,
       activeColor: activeColor,
       backgroundColor: backgroundColor,
       shadowColor: shadowColor,
