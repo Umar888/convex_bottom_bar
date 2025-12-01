@@ -27,12 +27,15 @@ class FixedCircleTabStyle extends InnerBuilder {
 
   /// Index of the centered convex shape.
   final int convexIndex;
+  
+  final bool alwaysUseActiveColorInCenterIcon;
 
   /// Create style builder
   FixedCircleTabStyle(
       {required List<TabItem> items,
       required Color activeColor,
       required Color color,
+      required this.alwaysUseActiveColorInCenterIcon,
       required this.backgroundColor,
       required this.convexIndex})
       : super(items: items, activeColor: activeColor, color: color);
@@ -57,7 +60,7 @@ class FixedCircleTabStyle extends InnerBuilder {
         ),
         margin: EdgeInsets.all(margin),
         child: BlendImageIcon(
-          active ? item.activeIcon ?? item.icon : item.icon,
+          alwaysUseActiveColorInCenterIcon?item.activeIcon:(active ? item.activeIcon ?? item.icon : item.icon),
           size: style.activeIconSize,
           color: item.blend ? backgroundColor : null,
         ),
