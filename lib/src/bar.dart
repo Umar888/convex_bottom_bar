@@ -112,6 +112,7 @@ class ConvexAppBar extends StatefulWidget {
 
   /// Color of the elevation.
   final Color? shadowColor;
+  final Widget centerWidget;
 
   /// Draw the background with topLeft and topRight corner; Only work work with fixed style
   ///
@@ -197,6 +198,7 @@ class ConvexAppBar extends StatefulWidget {
     required List<TabItem> items,
     int? initialActiveIndex,
     bool? disableDefaultTabController,
+    required Widget centerWidget,
     GestureTapIndexCallback? onTap,
     TapNotifier? onTabNotify,
     TabController? controller,
@@ -220,6 +222,7 @@ class ConvexAppBar extends StatefulWidget {
             style ?? TabStyle.reactCircle,
             items: items,
             alwaysUseActiveColorInCenterIcon: alwaysUseActiveColorInCenterIcon,
+            centerWidget: centerWidget,
             color: color ?? Colors.white60,
             activeColor: activeColor ?? Colors.white,
             backgroundColor: backgroundColor ?? Colors.blue,
@@ -227,13 +230,14 @@ class ConvexAppBar extends StatefulWidget {
           ),
           onTap: onTap,
           onTapNotify: onTabNotify,
-          controller: controller, 
+          controller: controller,
           alwaysUseActiveColorInCenterIcon:alwaysUseActiveColorInCenterIcon,
           backgroundColor: backgroundColor,
           shadowColor: shadowColor,
           count: items.length,
           initialActiveIndex: initialActiveIndex,
           disableDefaultTabController: disableDefaultTabController ?? false,
+          centerWidget: centerWidget,
           gradient: gradient,
           height: height,
           curveSize: curveSize,
@@ -263,6 +267,7 @@ class ConvexAppBar extends StatefulWidget {
     Key? key,
     required this.itemBuilder,
     required this.count,
+    required this.centerWidget,
     this.initialActiveIndex,
     this.disableDefaultTabController = false,
     this.onTap,
@@ -316,6 +321,7 @@ class ConvexAppBar extends StatefulWidget {
     required List<TabItem> items,
     int? initialActiveIndex,
     bool? disableDefaultTabController,
+    required Widget centerWidget,
     required bool alwaysUseActiveColorInCenterIcon,
     GestureTapIndexCallback? onTap,
     TapNotifier? onTabNotify,
@@ -348,6 +354,7 @@ class ConvexAppBar extends StatefulWidget {
       key: key,
       items: items,
       initialActiveIndex: initialActiveIndex,
+      centerWidget:centerWidget,
       disableDefaultTabController: disableDefaultTabController ?? false,
       onTap: onTap,
       onTabNotify: onTabNotify,
