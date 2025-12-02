@@ -112,7 +112,7 @@ class ConvexAppBar extends StatefulWidget {
 
   /// Color of the elevation.
   final Color? shadowColor;
-  final Widget centerWidget;
+  final Widget? centerWidget;
 
   /// Draw the background with topLeft and topRight corner; Only work work with fixed style
   ///
@@ -198,7 +198,7 @@ class ConvexAppBar extends StatefulWidget {
     required List<TabItem> items,
     int? initialActiveIndex,
     bool? disableDefaultTabController,
-    required Widget centerWidget,
+    required Widget? centerWidget,
     GestureTapIndexCallback? onTap,
     TapNotifier? onTabNotify,
     TabController? controller,
@@ -321,7 +321,7 @@ class ConvexAppBar extends StatefulWidget {
     required List<TabItem> items,
     int? initialActiveIndex,
     bool? disableDefaultTabController,
-    required Widget centerWidget,
+    required Widget? centerWidget,
     required bool alwaysUseActiveColorInCenterIcon,
     GestureTapIndexCallback? onTap,
     TapNotifier? onTabNotify,

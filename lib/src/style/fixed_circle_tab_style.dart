@@ -30,7 +30,7 @@ class FixedCircleTabStyle extends InnerBuilder {
 
   final bool alwaysUseActiveColorInCenterIcon;
 
-  final Widget centerWidget;
+  final Widget? centerWidget;
 
   /// Create style builder
   FixedCircleTabStyle(

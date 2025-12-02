@@ -31,7 +31,7 @@ import 'titled_tab_style.dart';
 DelegateBuilder supportedStyle(
   TabStyle style, {
   required List<TabItem> items,
-  required Widget centerWidget,
+  required Widget? centerWidget,
   required Color color,
   required Color activeColor,
   required Color backgroundColor,
