@@ -556,7 +556,7 @@ class ConvexAppBarState extends State<ConvexAppBar>
   Widget build(BuildContext context) {
     // take care of iPhoneX' safe area at bottom edge
     final additionalBottomPadding =
-        math.max(MediaQuery.of(context).padding.bottom, 0.0);
+        math.max(MediaQuery.of(context).padding.bottom*0.7, 0.0);
     final convexIndex = isFixed() ? (widget.count ~/ 2) : _currentIndex;
     final active = isFixed() ? convexIndex == _currentIndex : true;
 
@@ -633,7 +633,7 @@ class ConvexAppBarState extends State<ConvexAppBar>
 
     return Container(
       height: height,
-      padding: EdgeInsets.only(bottom: paddingBottom/2),
+      padding: EdgeInsets.only(bottom: paddingBottom),
       child: Row(
         mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.center,
