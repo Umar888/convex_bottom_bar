@@ -32,6 +32,7 @@ DelegateBuilder supportedStyle(
   TabStyle style, {
   required List<TabItem> items,
   required Widget? centerWidget,
+  required double? centerButtonSize,
   required Color color,
   required Color activeColor,
   required Color backgroundColor,
@@ -58,6 +59,7 @@ DelegateBuilder supportedStyle(
       builder = FixedCircleTabStyle(
         items: items,
         color: color,
+        centerButtonSize: centerButtonSize,
         centerWidget: centerWidget,
         alwaysUseActiveColorInCenterIcon: alwaysUseActiveColorInCenterIcon,
         activeColor: activeColor,

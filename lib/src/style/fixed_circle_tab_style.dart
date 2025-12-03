@@ -32,11 +32,14 @@ class FixedCircleTabStyle extends InnerBuilder {
 
   final Widget? centerWidget;
 
+  final double? centerButtonSize;
+
   /// Create style builder
   FixedCircleTabStyle(
       {required List<TabItem> items,
       required Color activeColor,
       required Color color,
+      required this.centerButtonSize,
       required this.alwaysUseActiveColorInCenterIcon,
       required this.centerWidget,
       required this.backgroundColor,
@@ -57,8 +60,8 @@ class FixedCircleTabStyle extends InnerBuilder {
       final item = items[index];
       return Container(
         // necessary otherwise the badge will not large enough
-        width: style.layoutSize,
-        height: style.layoutSize,
+        width: centerButtonSize ?? style.layoutSize,
+        height: centerButtonSize ?? style.layoutSize,
         decoration: BoxDecoration(
           shape: BoxShape.circle,
           color: c,

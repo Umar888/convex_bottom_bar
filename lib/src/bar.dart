@@ -113,6 +113,7 @@ class ConvexAppBar extends StatefulWidget {
   /// Color of the elevation.
   final Color? shadowColor;
   final Widget? centerWidget;
+  final double? centerButtonSize;
 
   /// Draw the background with topLeft and topRight corner; Only work work with fixed style
   ///
@@ -199,6 +200,7 @@ class ConvexAppBar extends StatefulWidget {
     int? initialActiveIndex,
     bool? disableDefaultTabController,
     required Widget? centerWidget,
+    required double? centerButtonSize,
     GestureTapIndexCallback? onTap,
     TapNotifier? onTabNotify,
     TabController? controller,
@@ -223,6 +225,7 @@ class ConvexAppBar extends StatefulWidget {
             items: items,
             alwaysUseActiveColorInCenterIcon: alwaysUseActiveColorInCenterIcon,
             centerWidget: centerWidget,
+            centerButtonSize: centerButtonSize,
             color: color ?? Colors.white60,
             activeColor: activeColor ?? Colors.white,
             backgroundColor: backgroundColor ?? Colors.blue,
@@ -238,6 +241,7 @@ class ConvexAppBar extends StatefulWidget {
           initialActiveIndex: initialActiveIndex,
           disableDefaultTabController: disableDefaultTabController ?? false,
           centerWidget: centerWidget,
+    centerButtonSize: centerButtonSize,
           gradient: gradient,
           height: height,
           curveSize: curveSize,
@@ -268,6 +272,7 @@ class ConvexAppBar extends StatefulWidget {
     required this.itemBuilder,
     required this.count,
     required this.centerWidget,
+    required this.centerButtonSize,
     this.initialActiveIndex,
     this.disableDefaultTabController = false,
     this.onTap,
@@ -322,6 +327,7 @@ class ConvexAppBar extends StatefulWidget {
     int? initialActiveIndex,
     bool? disableDefaultTabController,
     required Widget? centerWidget,
+    required double? centerButtonSize,
     required bool alwaysUseActiveColorInCenterIcon,
     GestureTapIndexCallback? onTap,
     TapNotifier? onTabNotify,
@@ -355,6 +361,7 @@ class ConvexAppBar extends StatefulWidget {
       items: items,
       initialActiveIndex: initialActiveIndex,
       centerWidget:centerWidget,
+      centerButtonSize:centerButtonSize,
       disableDefaultTabController: disableDefaultTabController ?? false,
       onTap: onTap,
       onTabNotify: onTabNotify,
