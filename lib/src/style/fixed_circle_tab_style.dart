@@ -58,7 +58,7 @@ class FixedCircleTabStyle extends InnerBuilder {
 
     if (index == convexIndex) {
       final item = items[index];
-      return Container(
+      return centerWidget ?? Container(
         // necessary otherwise the badge will not large enough
         width: centerButtonSize ?? style.layoutSize,
         height: centerButtonSize ?? style.layoutSize,
@@ -67,7 +67,7 @@ class FixedCircleTabStyle extends InnerBuilder {
           color: c,
         ),
         margin: EdgeInsets.all(margin),
-        child: centerWidget ?? BlendImageIcon(
+        child: BlendImageIcon(
           active ? item.activeIcon ?? item.icon : item.icon,
           size: style.activeIconSize,
           color: item.blend ? backgroundColor : null,
