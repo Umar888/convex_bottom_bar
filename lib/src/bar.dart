@@ -14,6 +14,7 @@
  *  limitations under the License.
  */
 
+import 'dart:io';
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
@@ -556,7 +557,7 @@ class ConvexAppBarState extends State<ConvexAppBar>
   Widget build(BuildContext context) {
     // take care of iPhoneX' safe area at bottom edge
     final additionalBottomPadding =
-        math.max(MediaQuery.of(context).padding.bottom*0.7, 0.0);
+        math.max(MediaQuery.of(context).padding.bottom*(Platform.isIOS?0.65:1), 0.0);
     final convexIndex = isFixed() ? (widget.count ~/ 2) : _currentIndex;
     final active = isFixed() ? convexIndex == _currentIndex : true;
 
