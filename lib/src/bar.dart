@@ -560,7 +560,7 @@ class ConvexAppBarState extends State<ConvexAppBar>
     final convexIndex = isFixed() ? (widget.count ~/ 2) : _currentIndex;
     final active = isFixed() ? convexIndex == _currentIndex : true;
 
-    final height = (widget.height ?? BAR_HEIGHT) + (additionalBottomPadding/2);
+    final height = (widget.height ?? BAR_HEIGHT) + (additionalBottomPadding);
     final width = MediaQuery.of(context).size.width;
     var percent = isFixed()
         ? const AlwaysStoppedAnimation<double>(0.5)
@@ -633,7 +633,7 @@ class ConvexAppBarState extends State<ConvexAppBar>
 
     return Container(
       height: height,
-      padding: EdgeInsets.only(bottom: paddingBottom),
+      padding: EdgeInsets.only(bottom: paddingBottom/2),
       child: Row(
         mainAxisSize: MainAxisSize.max,
         crossAxisAlignment: CrossAxisAlignment.center,
